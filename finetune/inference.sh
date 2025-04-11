@@ -1,4 +1,4 @@
-type_name=surrounding_thinking
+type_name=surrounding_thought
 trival_name=Llama-2-13B-chat_${type_name}
 output_model=./outputs/highD/intention_traj/${trival_name}
 python inference.py --base_model_path "./Llama_models/llama/models/7B-chat/hf" \
@@ -8,4 +8,3 @@ python inference.py --base_model_path "./Llama_models/llama/models/7B-chat/hf" \
     --max_new_tokens  300 \
     --reponse_dir  ${output_model}/response_${type_name}.pkl \
     --batch_size_each_gpu 32
-    # --device_id 1 \
