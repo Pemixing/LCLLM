@@ -108,30 +108,14 @@ def inference(args):
             with open(reponse_dir, 'wb') as f:
                 pickle.dump(responses, f)
             num += 1
-   
-#     for i in range(len(val_hugg_data)):
-#         print(i)
-#         # print(val_hugg_data[i]['text'])
-#         prompt = re.search(r'\[INST\](.*?)\[\/INST\]', val_hugg_data[i]['text'], re.DOTALL).group(1)
-#         # prompt = re.sub(r'<</SYS>> | <<SYS>>', "", prompt)
-#         prompt = prompt.strip()
-#         # # for qa json
-#         # prompt = val_hugg_data[i]
-#         print(prompt)
-#         result = prediction_pipe(f"<s>[INST] {prompt} [/INST]")
-#         print(result[0]['generated_text'])
-#     #     responses.append(result[0]['generated_text'])
-#     #     with open(reponse_dir, 'wb') as f:
-#     #         pickle.dump(responses, f)
-
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--base_model_path", type=str, default="/hpc2hdd/JH_DATA/share/xguo796/xguo796_AI_Drive/Llama_models/llama/models/7B-chat/hf")
-    parser.add_argument("--val_data_path", type=str, default="/hpc2hdd/home/mpeng060/Workspace/Prediction_LLMs/datasets/highD/4s/llama_val_base.json")
-    parser.add_argument("--new_model_path", type=str, default="/hpc2hdd/home/mpeng060/Workspace/Prediction_LLMs/outputs/highD/llama_7B_chat_base_4s")
-    parser.add_argument("--reponse_dir", type=str, default="/hpc2hdd/home/mpeng060/Workspace/Prediction_LLMs/response/highD/finetune/test.pkl")
+    parser.add_argument("--base_model_path", type=str, default="./Llama_models/llama/models/13B-chat/hf")
+    parser.add_argument("--val_data_path", type=str, default="./llama_val_base.json")
+    parser.add_argument("--new_model_path", type=str, default="./new_model")
+    parser.add_argument("--reponse_dir", type=str, default="./test.pkl")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--max_new_tokens", type=int, default=100)
     parser.add_argument("--batch_size_each_gpu", type=int, default=32)
