@@ -1,4 +1,4 @@
-suffix_str='surrounding_thinking'
+suffix_str='surrounding_thought'
 trial_name=Llama-2-13B-chat${suffix_str}
 output_model=./outputs/highD/intention_traj/${trial_name}
 # 需要修改到自己的输入目录
